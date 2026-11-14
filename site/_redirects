@@ -1,0 +1,3 @@
+# Per-company links: /r/wix shows the home page, and Web Analytics records the path
+# (it drops query strings, so ?ref=wix alone would not show up).
+/r/*  /  200

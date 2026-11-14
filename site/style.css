@@ -1,0 +1,172 @@
+/* Guy Aviv portfolio. Colors and type match the CV. */
+:root {
+  --bg: #ffffff;
+  --ink: #15171c;
+  --text: #2b2e36;
+  --muted: #5a5f6b;
+  --accent: #2f35c4;
+  --accent-soft: #eef0fd;
+  --line: #e4e6ec;
+  --surface: #f7f8fa;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --radius: 12px;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 17px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+h1, h2, h3 { color: var(--ink); margin: 0; }
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
+}
+
+.skip {
+  position: absolute; left: 8px; top: -60px;
+  background: var(--ink); color: #fff; padding: 10px 14px; border-radius: 8px; z-index: 10;
+}
+.skip:focus { top: 8px; }
+
+.label {
+  font: 500 12px/1.4 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 20px;
+  display: flex; align-items: center; gap: 14px;
+}
+h2.label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+/* Hero */
+.hero { padding-top: 72px; padding-bottom: 56px; }
+.hero .label { margin-bottom: 14px; }
+.hero h1 { font-size: clamp(44px, 9vw, 68px); line-height: 1.02; letter-spacing: -.03em; font-weight: 700; }
+.role { margin: 12px 0 0; font-size: clamp(18px, 3.4vw, 22px); font-weight: 600; color: var(--accent); }
+.lead { margin: 20px 0 0; font-size: clamp(19px, 3.4vw, 22px); line-height: 1.5; color: var(--ink); max-width: 34em; }
+.meta { margin: 24px 0 0; color: var(--muted); font-size: 15px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 46px; padding: 0 20px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bg); color: var(--ink);
+  font-weight: 600; font-size: 16px; text-decoration: none;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { background: #262bab; }
+
+/* Sections */
+main section { padding-top: 40px; padding-bottom: 32px; }
+
+.case {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 24px;
+  transition: border-color .15s ease;
+}
+.case:hover { border-color: #c9ccf3; }
+.case-head { margin-bottom: 18px; }
+.case h3 { font-size: 26px; letter-spacing: -.015em; line-height: 1.2; }
+.case h3 bdi { font-weight: 600; color: var(--muted); margin-left: 6px; }
+.kind { margin: 6px 0 0; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.tag {
+  font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 8px; border-radius: 6px;
+  background: var(--accent-soft); color: var(--accent);
+}
+.tag.own { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+
+.facts { margin: 0; display: grid; gap: 14px; }
+.facts > div { display: grid; grid-template-columns: 120px 1fr; gap: 16px; }
+.facts dt { font: 500 12px/1.9 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: 1px; }
+.facts dd { margin: 0; }
+.facts ul, .job ul { margin: 0; padding-left: 18px; }
+.facts li, .job li { margin: 0 0 6px; }
+.facts li::marker, .job li::marker { color: var(--accent); }
+
+.shot { margin: 24px 0 0; }
+.shot img {
+  border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+  width: 100%;
+}
+.shot figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); }
+.shot.tablet img { max-width: 440px; }
+.shot.phones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.shot.phones img { border-radius: 14px; }
+.shot.phones figcaption { grid-column: 1 / -1; margin-top: 0; }
+
+.link { margin: 18px 0 0; font-weight: 600; }
+
+.compact p { margin: 0 0 12px; }
+.pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.pills li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 15px; }
+
+/* How I work */
+.principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: p; }
+.principles li { background: var(--accent-soft); border-radius: var(--radius); padding: 22px; counter-increment: p; }
+.principles li::before { content: "0" counter(p); display: block; font: 500 12px/1 var(--mono); color: var(--accent); margin-bottom: 14px; letter-spacing: .08em; }
+.principles h3 { font-size: 18px; margin-bottom: 6px; }
+.principles p { margin: 0; font-size: 16px; }
+
+/* Experience */
+.job { padding: 18px 0; border-top: 1px solid var(--line); }
+.job:first-of-type { border-top: 0; padding-top: 0; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+.job h3 { font-size: 18px; font-weight: 600; }
+.org { font-weight: 400; color: var(--muted); }
+.when { margin: 0; font: 400 13px/1.6 var(--mono); color: var(--muted); white-space: nowrap; }
+.job > p { margin: 6px 0 12px; }
+
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+
+/* Footer */
+footer { padding-top: 40px; padding-bottom: max(56px, env(safe-area-inset-bottom)); }
+.contact { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+.contact a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; font-size: 17px; }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .hero { padding-top: 48px; padding-bottom: 40px; }
+  .actions .btn { flex: 1 1 auto; }
+  .case { padding: 20px; }
+  .case h3 { font-size: 23px; }
+  .facts > div { grid-template-columns: 1fr; gap: 2px; }
+  .principles { grid-template-columns: 1fr; }
+  .shot.phones { gap: 8px; }
+  .shot.phones img { border-radius: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* The wide flow wireframe scrolls sideways on phones instead of shrinking to unreadable. */
+@media (max-width: 640px) {
+  .scroller { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; }
+  .scroller img { width: 760px; max-width: none; }
+}
