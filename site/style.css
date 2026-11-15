@@ -278,3 +278,15 @@ details .shot { margin-top: 18px; }
   .media.phone { max-width: 220px; }
 }
 .section-lead { margin: -4px 0 20px; max-width: 46em; color: var(--text); }
+
+/* Skills card: the count up front, then the examples */
+.skills-head { display: flex; gap: 24px; align-items: flex-start; }
+.big-num { margin: 0; font-size: 72px; line-height: .9; font-weight: 700; letter-spacing: -.04em; color: var(--accent); }
+.skill-list { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.skill-list li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.5; }
+.skill-list strong { color: var(--ink); font-size: 16px; }
+@media (max-width: 640px) {
+  .skills-head { flex-direction: column; gap: 8px; }
+  .big-num { font-size: 52px; }
+  .skill-list { grid-template-columns: 1fr; }
+}
