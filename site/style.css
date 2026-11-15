@@ -277,3 +277,4 @@ details .shot { margin-top: 18px; }
   .media.wide { max-width: none; }
   .media.phone { max-width: 220px; }
 }
+.section-lead { margin: -4px 0 20px; max-width: 46em; color: var(--text); }
