@@ -28,131 +28,187 @@
 <body>
 <a class="skip" href="#work">Skip to case studies</a>
 
-<header class="hero wrap">
-  <p class="label">Portfolio</p>
-  <h1>Guy Aviv</h1>
-  <p class="role">Product &amp; Project Manager | AI-Assisted Builder</p>
-  <p class="lead">I own client products from discovery to release, and I build working prototypes and products with AI.</p>
-  <div class="actions">
-    <a class="btn primary" href="/Guy-Aviv-CV.pdf" download>Download CV (PDF)</a>
-    <a class="btn" href="https://www.linkedin.com/in/guy-aviv-project-manager/" rel="noopener">LinkedIn</a>
-    <a class="btn" href="#contact" data-mail>Email</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Guy Aviv</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a class="hide-sm" href="#ai">How I work</a>
+      <a href="#experience">Experience</a>
+      <a class="btn small primary" href="/Guy-Aviv-CV.pdf" download>CV</a>
+    </nav>
   </div>
-  <p class="meta">4.5+ years at BSX Ltd, 8-10 client accounts at a time, 6+ product launches shipped. Holon, Israel.</p>
 </header>
 
-<main>
-  <section id="work" class="wrap" aria-labelledby="work-h">
-    <h2 id="work-h" class="label">Case studies</h2>
+<main id="top">
+  <section class="hero wrap" aria-labelledby="name">
+    <p class="label">Portfolio</p>
+    <h1 id="name">Guy Aviv</h1>
+    <p class="role">Product &amp; Project Manager | AI-Assisted Builder</p>
+    <p class="lead">I own client products from discovery to release, and I build working prototypes and products with AI.</p>
+    <div class="actions">
+      <a class="btn primary" href="/Guy-Aviv-CV.pdf" download>Download CV (PDF)</a>
+      <a class="btn" href="https://www.linkedin.com/in/guy-aviv-project-manager/" rel="noopener">LinkedIn</a>
+      <a class="btn" href="#contact" data-mail>Email</a>
+    </div>
+    <p class="meta">4.5+ years at BSX Ltd, 8-10 client accounts at a time, 6+ product launches shipped. Holon, Israel.</p>
+  </section>
 
-    <article class="case" aria-labelledby="c-vino">
-      <div class="case-head">
+  <section id="work" class="wrap" aria-labelledby="work-h">
+    <h2 id="work-h" class="label">Selected work</h2>
+    <ul class="tiles">
+      <li><a href="#vinomate">
+        <img src="/img/tile-vinomate.webp" width="480" height="360" alt="" data-decorative decoding="async">
+        <span class="tile-text"><strong>Vinomate</strong><span>AI sommelier kiosk. PRD and hi-fi prototype.</span><span class="tag">Client</span></span>
+      </a></li>
+      <li><a href="#tongue">
+        <img src="/img/tile-tongue.webp" width="480" height="360" alt="" data-decorative decoding="async">
+        <span class="tile-text"><strong>Tongue-diagnosis app</strong><span>Design audit, PRD and wireframes.</span><span class="tag">Client</span></span>
+      </a></li>
+      <li><a href="#hechatzer">
+        <img src="/img/tile-hechatzer.webp" width="480" height="360" alt="" data-decorative decoding="async">
+        <span class="tile-text"><strong>HeChatzer</strong><span>Encrypted app for lists and turns. Live.</span><span class="tag own">Own product</span></span>
+      </a></li>
+      <li><a href="#squad">
+        <img src="/img/tile-squad.webp" width="480" height="360" alt="" data-decorative decoding="async">
+        <span class="tile-text"><strong>Squad Journal</strong><span>Auto-updating stats site. Live.</span><span class="tag own">Own product</span></span>
+      </a></li>
+    </ul>
+
+    <article id="vinomate" class="case" aria-labelledby="c-vino">
+      <div class="case-text">
         <h3 id="c-vino">Vinomate</h3>
         <p class="kind">AI sommelier kiosk <span class="tag">Client project</span></p>
+        <p class="outcome">I wrote the PRD and built the clickable hi-fi prototype for an in-store tablet that recommends wine by taste, dish, occasion and budget.</p>
+        <ul class="stats">
+          <li><b>3</b> interfaces</li>
+          <li><b>5</b> user roles</li>
+          <li><b>10</b> client iterations</li>
+        </ul>
+        <details>
+          <summary>Read the full case study</summary>
+          <dl class="facts">
+            <div><dt>Problem</dt><dd>A wine store wanted an in-store tablet that recommends wine by taste profile, dish, occasion and budget, and remembers what each customer chose so the next recommendation is sharper.</dd></div>
+            <div><dt>My role</dt><dd>Product manager: requirements, prototype and design handoff.</dd></div>
+            <div><dt>What I did</dt><dd>
+              <ul>
+                <li>Wrote the PRD: testable, ID-tracked requirements for 3 interfaces (customer kiosk, store back office, super admin), 5 user roles, and a server-side LLM for the chat sommelier and catalogue enrichment.</li>
+                <li>Built the interactive hi-fi prototype with Claude Code and took it through 10 client iterations: SMS/QR sign-in, taste-profile scales, a returning-customer feedback loop, event planning, offline guest mode, Hebrew RTL.</li>
+                <li>Wrote a 12-part Figma Make prompt library for design handoff, and worked on the investor deck.</li>
+              </ul>
+            </dd></div>
+            <div><dt>Result</dt><dd>A clickable prototype the client reacted to across 10 iterations, backed by a PRD developers can build from.</dd></div>
+          </dl>
+        </details>
+        <p class="link"><a href="#contact" data-mail="Vinomate demo">Demo on request</a></p>
       </div>
-      <dl class="facts">
-        <div><dt>Problem</dt><dd>A wine store wanted an in-store tablet that recommends wine by taste profile, dish, occasion and budget, and remembers what each customer chose so the next recommendation is sharper.</dd></div>
-        <div><dt>My role</dt><dd>Product manager: requirements, prototype and design handoff.</dd></div>
-        <div><dt>What I did</dt><dd>
-          <ul>
-            <li>Wrote the PRD: testable, ID-tracked requirements for 3 interfaces (customer kiosk, store back office, super admin), 5 user roles, and a server-side LLM for the chat sommelier and catalogue enrichment.</li>
-            <li>Built the interactive hi-fi prototype with Claude Code and took it through 10 client iterations: SMS/QR sign-in, taste-profile scales, a returning-customer feedback loop, event planning, offline guest mode, Hebrew RTL.</li>
-            <li>Wrote a 12-part Figma Make prompt library for design handoff, and worked on the investor deck.</li>
-          </ul>
-        </dd></div>
-        <div><dt>Result</dt><dd>A clickable prototype the client reacted to across 10 iterations, backed by a PRD developers can build from.</dd></div>
-      </dl>
-      <figure class="shot tablet">
-        <img src="/img/vinomate-taste-profile.webp" width="858" height="1144" loading="lazy" decoding="async"
-             alt="Vinomate prototype, the taste profile screen in Hebrew: red and white wine profiles with their completion level, diet preferences, and taste scales for sweetness, acidity, tannins and body.">
-        <figcaption>Taste profile screen from the hi-fi prototype (Hebrew, right to left).</figcaption>
+      <figure class="media tablet">
+        <video class="clip" muted loop playsinline preload="none" width="600" height="800" poster="/video/vinomate-poster.webp"
+               aria-label="Vinomate prototype in Hebrew: splash screen, choosing favourite fruits, the taste profile, event planning, the chat sommelier, and the Israel wine-region map." data-src="/video/vinomate.mp4" data-name="Vinomate"></video>
+        <figcaption>Screens from the hi-fi prototype (Hebrew, right to left).</figcaption>
       </figure>
-      <p class="link"><a href="#contact" data-mail="Vinomate demo">Demo on request</a></p>
     </article>
 
-    <article class="case" aria-labelledby="c-tongue">
-      <div class="case-head">
+    <article id="tongue" class="case" aria-labelledby="c-tongue">
+      <div class="case-text">
         <h3 id="c-tongue">Tongue-diagnosis health app</h3>
         <p class="kind">Complementary medicine <span class="tag">Client project</span></p>
+        <p class="outcome">I audited the design, wrote the PRD and wireframed the flows before development, so problems were found on paper and not in code.</p>
+        <ul class="stats">
+          <li><b>60+</b> screens audited</li>
+          <li><b>17</b> flow areas</li>
+          <li><b>20</b> issues caught</li>
+        </ul>
+        <details>
+          <summary>Read the full case study</summary>
+          <dl class="facts">
+            <div><dt>Problem</dt><dd>A consumer app that reads a photo of the tongue and returns nutrition, sleep and lifestyle guidance, with family profiles and a subscription. The design had to be ready for development.</dd></div>
+            <div><dt>My role</dt><dd>Product manager: design audit, requirements, flows and wireframes.</dd></div>
+            <div><dt>What I did</dt><dd>
+              <ul>
+                <li>Audited the design across 60+ screens and 17 flow areas.</li>
+                <li>Wrote the PRD and mapped the end-to-end flow.</li>
+                <li>Wireframed the screens, including a 22-screen family-profiles flow.</li>
+                <li>Ran competitor research with the client.</li>
+              </ul>
+            </dd></div>
+            <div><dt>Result</dt><dd>20 issues logged before development: pricing conflicts, consent and sign-in gaps, unhandled acute-symptom answers.</dd></div>
+          </dl>
+          <figure class="shot">
+            <div class="scroller" dir="rtl" tabindex="0" role="region" aria-label="User flow wireframe, scrolls sideways on small screens">
+              <img src="/img/tongue-flow-map.webp" width="1260" height="300" loading="lazy" decoding="async"
+                   alt="Lo-fi wireframe of the app's user flow in Hebrew, nine phone screens in a row: intro video, sign-up, home, before the scan, choosing a complaint, medical background, photo with a warning, the free result, and the paid plan with nutrition.">
+            </div>
+            <figcaption>The whole user flow on one line (Hebrew, read right to left).</figcaption>
+          </figure>
+        </details>
+        <p class="link"><a href="#contact" data-mail="Tongue app wireframes">Wireframes on request</a></p>
       </div>
-      <dl class="facts">
-        <div><dt>Problem</dt><dd>A consumer app that reads a photo of the tongue and returns nutrition, sleep and lifestyle guidance, with family profiles and a subscription. The design had to be ready for development.</dd></div>
-        <div><dt>My role</dt><dd>Product manager: design audit, requirements, flows and wireframes.</dd></div>
-        <div><dt>What I did</dt><dd>
-          <ul>
-            <li>Audited the design across 60+ screens and 17 flow areas.</li>
-            <li>Wrote the PRD and mapped the end-to-end flow.</li>
-            <li>Wireframed the screens, including a 22-screen family-profiles flow.</li>
-            <li>Ran competitor research with the client.</li>
-          </ul>
-        </dd></div>
-        <div><dt>Result</dt><dd>20 issues logged before development: pricing conflicts, consent and sign-in gaps, unhandled acute-symptom answers.</dd></div>
-      </dl>
-      <figure class="shot wide">
-        <div class="scroller" dir="rtl" tabindex="0" role="region" aria-label="User flow wireframe, scrolls sideways on small screens">
-        <img src="/img/tongue-flow-map.webp" width="1260" height="300" loading="lazy" decoding="async"
-             alt="Lo-fi wireframe of the app's user flow in Hebrew, nine phone screens in a row: intro video, sign-up, home, before the scan, choosing a complaint, medical background, photo with a warning, the free result, and the paid plan with nutrition.">
-        </div>
-        <figcaption>End-to-end user flow, lo-fi wireframes (Hebrew, read right to left).</figcaption>
+      <figure class="media wide">
+        <video class="clip" muted loop playsinline preload="none" width="800" height="600" poster="/video/tongue-poster.webp"
+               aria-label="Lo-fi wireframes in Hebrew: a pan along the user flow from intro video to the paid plan, then the three onboarding screens." data-src="/video/tongue.mp4" data-name="tongue app wireframes"></video>
+        <figcaption>Lo-fi wireframes: the user flow and onboarding.</figcaption>
       </figure>
-      <p class="link"><a href="#contact" data-mail="Tongue app wireframes">Wireframes on request</a></p>
     </article>
 
-    <article class="case" aria-labelledby="c-chatzer">
-      <div class="case-head">
+    <article id="hechatzer" class="case" aria-labelledby="c-chatzer">
+      <div class="case-text">
         <h3 id="c-chatzer">HeChatzer <bdi lang="he">החצר</bdi></h3>
         <p class="kind">Lists and turns for friends and family <span class="tag own">Own product</span></p>
+        <p class="outcome">I designed and built an end-to-end-encrypted app for who-brings-what and chores in turns. PRD, brand, every screen and the code, with Claude Code.</p>
+        <ul class="stats">
+          <li><b>105</b> automated tests</li>
+          <li><b>₪0</b> a month up to ~1,000 daily users</li>
+        </ul>
+        <details>
+          <summary>Read the full case study</summary>
+          <dl class="facts">
+            <div><dt>Problem</dt><dd>Lists, turns and who-brings-what for friends and family, with the data end-to-end encrypted so the server only ever stores locked data.</dd></div>
+            <div><dt>My role</dt><dd>Everything: PRD, brand, every screen and the code, built with Claude Code.</dd></div>
+            <div><dt>What I did</dt><dd>
+              <ul>
+                <li>Offline-first PWA with AES-GCM encryption, ECDSA-signed events, and Face ID sign-in through passkeys.</li>
+                <li>Runs on Cloudflare Pages, D1 and R2.</li>
+              </ul>
+            </dd></div>
+            <div><dt>Result</dt><dd>105 automated tests (51 unit, 24 server, 30 browser on 3 phones) gate every merge in GitHub Actions. Designed to run at ₪0 a month up to ~1,000 daily users.</dd></div>
+          </dl>
+        </details>
+        <p class="link"><a href="https://hechatzer.pages.dev/" rel="noopener">Try it live: hechatzer.pages.dev</a></p>
       </div>
-      <dl class="facts">
-        <div><dt>Problem</dt><dd>Lists, turns and who-brings-what for friends and family, with the data end-to-end encrypted so the server only ever stores locked data.</dd></div>
-        <div><dt>My role</dt><dd>Everything: PRD, brand, every screen and the code, built with Claude Code.</dd></div>
-        <div><dt>What I did</dt><dd>
-          <ul>
-            <li>Offline-first PWA with AES-GCM encryption, ECDSA-signed events, and Face ID sign-in through passkeys.</li>
-            <li>Runs on Cloudflare Pages, D1 and R2.</li>
-          </ul>
-        </dd></div>
-        <div><dt>Result</dt><dd>105 automated tests (51 unit, 24 server, 30 browser on 3 phones) gate every merge in GitHub Actions. Designed to run at ₪0 a month up to ~1,000 daily users.</dd></div>
-      </dl>
-      <figure class="shot phones">
-        <img src="/img/hechatzer-welcome.webp" width="585" height="1266" loading="lazy" decoding="async"
-             alt="HeChatzer welcome screen in Hebrew: a headline welcoming you to the yard, four cartoon ducklings, a name field and a green button to enter.">
-        <img src="/img/hechatzer-event.webp" width="585" height="1266" loading="lazy" decoding="async"
-             alt="HeChatzer event yard in Hebrew for a Friday barbecue: a progress bar of items taken and a list of items, each with an I'll bring it button.">
-        <img src="/img/hechatzer-turns.webp" width="585" height="1266" loading="lazy" decoding="async"
-             alt="HeChatzer home yard in Hebrew: chores in turns, with green cards telling you it is your turn to do the dishes, take out the trash and clean the living room.">
-        <figcaption>Welcome, an event yard (who brings what), and chores in turns. Demo data from the automated browser tests.</figcaption>
+      <figure class="media phone">
+        <video class="clip" muted loop playsinline preload="none" width="450" height="974" poster="/video/hechatzer-poster.webp"
+               aria-label="HeChatzer on a phone, in Hebrew: the welcome screen, my yards, an event list, taking an item with a duckling animation, the full list, chores in turns, and my day." data-src="/video/hechatzer.mp4" data-name="HeChatzer"></video>
+        <figcaption>On a phone. Demo data from the automated browser tests.</figcaption>
       </figure>
-      <p class="link"><a href="https://hechatzer.pages.dev/" rel="noopener">hechatzer.pages.dev</a></p>
     </article>
 
-    <article class="case compact side" aria-labelledby="c-squad">
-      <div>
-        <div class="case-head">
-          <h3 id="c-squad">Squad Journal</h3>
-          <p class="kind">PUBG stats site <span class="tag own">Own product</span></p>
-        </div>
-        <p>Our five-person gaming squad lived in a WhatsApp group with no memory. I built an auto-updating stats site on Cloudflare Workers (free tier), so our matches become session recaps and weekly stats on a page anyone can open.</p>
+    <article id="squad" class="case" aria-labelledby="c-squad">
+      <div class="case-text">
+        <h3 id="c-squad">Squad Journal</h3>
+        <p class="kind">PUBG stats site <span class="tag own">Own product</span></p>
+        <p class="outcome">Our five-person gaming squad lived in a WhatsApp group with no memory. I built an auto-updating stats site on Cloudflare Workers (free tier), so our matches become session recaps and weekly stats on a page anyone can open.</p>
         <p class="link"><a href="https://squad-journal.guyyyy15-web.workers.dev/" rel="noopener">See it live</a></p>
       </div>
-      <figure class="shot">
-        <img src="/img/squad-journal.webp" width="1600" height="1000" loading="lazy" decoding="async"
-             alt="Squad Journal home page, dark theme: season totals for sessions, matches, chicken dinners and kills, and the latest session recap.">
+      <figure class="media">
+        <video class="clip" muted loop playsinline preload="none" width="600" height="790" poster="/video/squad-poster.webp"
+               aria-label="Squad Journal, dark theme: scrolling through session recaps, then the Hall of Fame with ranks and best duos." data-src="/video/squad.mp4" data-name="Squad Journal"></video>
+        <figcaption>Session recaps and the Hall of Fame.</figcaption>
       </figure>
     </article>
 
     <article class="case compact" aria-labelledby="c-skills">
-      <div class="case-head">
+      <div class="case-text">
         <h3 id="c-skills">17 custom AI agent skills</h3>
         <p class="kind">For Claude Code <span class="tag own">Own work</span></p>
+        <p>Reusable skills that run whole workflows, for example:</p>
+        <ul class="pills">
+          <li>A Python puzzle-book generator with verified solutions and print-ready PDFs</li>
+          <li>A spec architect</li>
+          <li>A Hebrew RTL fixer</li>
+          <li>A job-hunt engine</li>
+        </ul>
       </div>
-      <p>Reusable skills that run whole workflows, for example:</p>
-      <ul class="pills">
-        <li>A Python puzzle-book generator with verified solutions and print-ready PDFs</li>
-        <li>A spec architect</li>
-        <li>A Hebrew RTL fixer</li>
-        <li>A job-hunt engine</li>
-      </ul>
     </article>
   </section>
 

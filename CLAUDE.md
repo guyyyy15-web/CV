@@ -7,7 +7,8 @@ output directory `site/`, no build step). Every push to `main` deploys.
 site/index.html        the page
 site/style.css         all styles (colors and fonts match the CV)
 site/site.js           builds the mailto links, so the address is not plain text in the HTML
-site/img/              screenshots (WebP, each under 300 KB)
+site/img/              overview tiles and the flow wireframe (WebP, each under 300 KB)
+site/video/            muted looping clips (MP4, each under 500 KB) and their posters, loaded only when in view
 site/Guy-Aviv-CV.pdf   the one-page CV behind "Download CV"
 site/og.png            link preview for WhatsApp and LinkedIn (1200x630)
 site/_headers          noindex, CSP, caching

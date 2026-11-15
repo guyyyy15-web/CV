@@ -23,8 +23,13 @@ for (const page of ['index.html', '404.html']) {
     const f = m[1] === '/' ? 'index.html' : m[1].slice(1)
     if (!existsSync(join(SITE, f))) bad(`${page}: missing file ${m[1]}`)
   }
-  for (const m of html.matchAll(/<img\b[^>]*>/g)) if (!/alt="[^"]{12,}"/.test(m[0])) bad(`${page}: image without real alt text: ${m[0].slice(0, 80)}`)
+  for (const m of html.matchAll(/<img\b[^>]*>/g)) if (!/data-decorative/.test(m[0]) && !/alt="[^"]{12,}"/.test(m[0])) bad(`${page}: image without real alt text: ${m[0].slice(0, 80)}`)
 }
 if (!readFileSync(join(SITE, 'index.html'), 'utf8').includes('<meta name="robots" content="noindex">')) bad('noindex meta missing')
+for (const m of readFileSync(join(SITE, 'index.html'), 'utf8').matchAll(/<video\b[^>]*>/g)) {
+  if (!/aria-label="[^"]{20,}"/.test(m[0])) bad('video without a description: ' + m[0].slice(0, 80))
+  const src = (m[0].match(/data-src="\/([^"]+)"/) || [])[1]
+  if (!src || !existsSync(join(SITE, src))) bad('video file missing: ' + src)
+}
 console.log(fail ? `${fail} problem(s)` : 'all checks passed')
 process.exit(fail ? 1 : 0)
