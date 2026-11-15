@@ -30,3 +30,6 @@ under Paths. `?ref=` still works (the page ignores it), it just is not counted s
 - `noindex` stays until Guy decides the site should be searchable (meta tag and `X-Robots-Tag` in `_headers`).
 
 Run `node scripts/check.mjs` before every commit.
+
+Before writing or changing any English copy (site, CV, LinkedIn), follow `.claude/skills/copy-translator/SKILL.md`:
+it catches literal translations from Hebrew and keeps every fact matched to the CV.
