@@ -1,8 +1,9 @@
 // House rules for the visible copy, plus local links. Run: node scripts/check.mjs
 import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const SITE = new URL('../site/', import.meta.url).pathname
+const SITE = fileURLToPath(new URL('../site/', import.meta.url))
 let fail = 0
 const bad = (msg) => { fail++; console.log('FAIL', msg) }
 
