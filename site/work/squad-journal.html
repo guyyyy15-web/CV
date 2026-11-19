@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Squad Journal case study | Guy Aviv</title>
+<meta name="description" content="Squad Journal: a PUBG stats site for a group of friends that runs by itself on Cloudflare's free tier, with session recaps, stats and animated match replays.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://guyaviv.pages.dev/work/squad-journal">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://guyaviv.pages.dev/work/squad-journal">
+<meta property="og:title" content="Squad Journal case study | Guy Aviv">
+<meta property="og:description" content="A stats site that runs by itself on a free tier, and the constraints that shaped it.">
+<meta property="og:image" content="https://guyaviv.pages.dev/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/site.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "af52354739e8443c9c1f51a5ee0d1eed"}'></script>
+</head>
+<body>
+<a class="skip" href="#story">Skip to the case study</a>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="/">Guy Aviv</a>
+    <nav aria-label="Sections">
+      <a href="/#work">All work</a>
+      <a class="btn small primary" href="/Guy-Aviv-CV.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="story" class="wrap cs">
+  <p class="label">Case study <span class="tag own">Own product</span></p>
+  <h1>Squad Journal</h1>
+  <p class="lead">Our gaming squad lived in a WhatsApp group with no memory. I built a site that collects every PUBG match by itself and turns it into session recaps, weekly stats and animated replays of each fight. It runs on Cloudflare's free tier, and nobody has to touch it.</p>
+  <ul class="stats">
+    <li><b>56</b> matches and <b>9</b> sessions recorded so far</li>
+    <li><b>1 ms</b> of CPU for an idle check, every 5 minutes</li>
+    <li><b>30 fps</b> highlight videos, 0 dropped frames</li>
+    <li><b>47</b> unit tests</li>
+  </ul>
+  <p class="actions"><a class="btn primary" href="https://squad-journal.guyyyy15-web.workers.dev/" rel="noopener">See it live</a></p>
+
+  <figure class="media cs-media">
+    <video class="clip" muted loop playsinline preload="none" width="600" height="790" poster="/video/squad-poster.webp"
+           aria-label="Squad Journal, dark theme: scrolling through session recaps, then the Hall of Fame with ranks and best duos." data-src="/video/squad.mp4" data-name="Squad Journal"></video>
+    <figcaption>Session recaps and the Hall of Fame.</figcaption>
+  </figure>
+
+  <section class="cs-part" aria-labelledby="h-problem">
+    <h2 id="h-problem">The problem</h2>
+    <p>After a night of games, the best moments live in a few voice-chat jokes and are gone by morning. PUBG has the data, but only for 14 days, and only one player at a time. We wanted our own record: who played, who carried, and the fights worth watching again.</p>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-limits">
+    <h2 id="h-limits">Constraints that shaped the product</h2>
+    <ul>
+      <li><strong>PUBG deletes matches after 14 days.</strong> The site copies every match and its full event log to storage the moment it appears, so the history is never lost and the stats can be rebuilt from the raw data.</li>
+      <li><strong>The free plan gives 10 ms of CPU per request.</strong> That is too little to read a match's event log on the server. So the visitor's browser reads it in the background, and the server only checks and stores the small summary it sends back.</li>
+      <li><strong>The PUBG API allows 10 player lookups a minute.</strong> Polling adapts: every 5 minutes during a session, every 15 for the next 6 hours, every 30 when idle.</li>
+      <li><strong>Numbers are never invented.</strong> Awards are fixed rules over real stats. The AI recap may only restate computed facts, and a check rejects any recap with a number that is not in the facts.</li>
+    </ul>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-built">
+    <h2 id="h-built">What I built</h2>
+    <ul>
+      <li>Session pages that lead with replays: each match as an animated map of every fight, with a camera that follows the action and slows down for knocks and kills.</li>
+      <li>A stats page: accuracy, first shot versus clean wins, damage by weapon, best duos, how we die.</li>
+      <li>A highlight video of each match, rendered frame by frame in the browser and shared from the phone. Nothing is uploaded.</li>
+      <li>A public look-up for any Steam PUBG player, with nothing stored on the server.</li>
+    </ul>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-role">
+    <h2 id="h-role">My role</h2>
+    <p>Product brief, scope in phases, design and code, built with Claude Code. I kept the CPU flat as history grows: heavy work runs one job per scheduled run, and pages read precomputed totals.</p>
+  </section>
+
+  <p class="cs-next"><a href="/work/japan-companion">Next: Japan Companion ›</a></p>
+</main>
+
+<footer id="contact" class="wrap">
+  <h2 class="label">Contact</h2>
+  <ul class="contact">
+    <li><a href="#contact" data-mail="Squad Journal">Email</a></li>
+    <li><a href="https://www.linkedin.com/in/guy-aviv-project-manager/" rel="noopener">LinkedIn</a></li>
+    <li><a href="/Guy-Aviv-CV.pdf" download>Download CV</a></li>
+  </ul>
+</footer>
+</body>
+</html>
