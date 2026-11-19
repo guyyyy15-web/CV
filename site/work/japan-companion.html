@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Japan Companion case study | Guy Aviv</title>
+<meta name="description" content="Japan Companion: an offline travel app for Hebrew speakers in Japan. Phrases with Hebrew pronunciation, a sentence builder, money and the nearest toilet, all without signal.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://guyaviv.pages.dev/work/japan-companion">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://guyaviv.pages.dev/work/japan-companion">
+<meta property="og:title" content="Japan Companion case study | Guy Aviv">
+<meta property="og:description" content="An offline travel app for Hebrew speakers in Japan, built in 9 days.">
+<meta property="og:image" content="https://guyaviv.pages.dev/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/site.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "af52354739e8443c9c1f51a5ee0d1eed"}'></script>
+</head>
+<body>
+<a class="skip" href="#story">Skip to the case study</a>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="/">Guy Aviv</a>
+    <nav aria-label="Sections">
+      <a href="/#work">All work</a>
+      <a class="btn small primary" href="/Guy-Aviv-CV.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="story" class="wrap cs">
+  <p class="label">Case study <span class="tag own">Own product</span></p>
+  <h1>Japan Companion <bdi lang="he">יפן בכיס</bdi></h1>
+  <p class="lead">A pocket app for Hebrew speakers traveling in Japan. It does the two hardest things for a visitor: talking to people and handling money. Everything works without signal, from the subway to the mountains.</p>
+  <ul class="stats">
+    <li><b>15</b> versions in 9 days</li>
+    <li><b>187</b> phrases with Hebrew pronunciation</li>
+    <li><b>3,056</b> hand-checked builder sentences</li>
+    <li><b>~490,000</b> places available offline</li>
+  </ul>
+  <p class="actions"><a class="btn primary" href="https://guyyyy15-web.github.io/japan-companion/" rel="noopener">Open the app</a></p>
+
+  <figure class="shot phones cs-shots">
+    <img src="/img/work/japan-phrases.webp" width="360" height="780" loading="lazy" decoding="async" alt="Phrases tab in Hebrew: everyday Japanese phrases with Hebrew pronunciation, romaji, audio and favorite buttons.">
+    <img src="/img/work/japan-builder.webp" width="360" height="780" loading="lazy" decoding="async" alt="Sentence builder in Hebrew: the finished sentence 'Where is the toilet?' in Japanese, with Hebrew pronunciation and audio.">
+    <img src="/img/work/japan-intro.webp" width="360" height="780" loading="lazy" decoding="async" alt="First-visit intro in Hebrew: the five tabs explained, each with an icon and one line.">
+    <figcaption>Phrases, the sentence builder, and the intro for first-time visitors (Hebrew, right to left).</figcaption>
+  </figure>
+
+  <section class="cs-part" aria-labelledby="h-problem">
+    <h2 id="h-problem">The problem</h2>
+    <p>Phrasebooks give you Japanese in romaji, which a Hebrew speaker mispronounces. Translation apps need signal and sometimes produce sentences no one would say. Prices are in yen, much of Japan still runs on cash, and the nearest public toilet is never where you are looking.</p>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-calls">
+    <h2 id="h-calls">Product calls I made</h2>
+    <ul>
+      <li><strong>Offline first.</strong> Phrases, signs, the converter and a snapshot of toilets, trash cans and convenience stores across Japan ship with the app. The map data is refreshed monthly by a scheduled job.</li>
+      <li><strong>A builder, not free translation.</strong> You pick a situation, a sentence frame and a word, and only sensible combinations are offered: 58 frames and 3,056 combinations, each one checked. Free text is handed off to Google Translate.</li>
+      <li><strong>Work with the iPhone, not against it.</strong> Speech recognition does not work in Home Screen apps, and Google blocks embedding Translate and Lens. So the app opens them one tap away instead of half-copying them.</li>
+      <li><strong>Show it to staff.</strong> Any phrase opens as a full-screen card with the screen kept on, flipped to face the person you are talking to.</li>
+      <li><strong>Ready for friends.</strong> The tab bar went from seven tabs to five, and a three-step intro greets anyone who opens the link for the first time.</li>
+    </ul>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-quality">
+    <h2 id="h-quality">Quality</h2>
+    <p>80 unit tests cover the money maths, Hebrew and English string parity, the content schema and every builder sentence. A browser test on an iPhone-sized screen goes through every tab in both languages, offline, and on the small iPhone SE.</p>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-role">
+    <h2 id="h-role">My role</h2>
+    <p>Research, product plan, content rules, design and code, built with Claude Code. I wrote project skills for it (bilingual right-to-left UI, iPhone web app rules, Japanese content checks, the release check) so every change follows the same rules.</p>
+  </section>
+
+  <p class="cs-next"><a href="/work/hechatzer">Next: HeChatzer ›</a></p>
+</main>
+
+<footer id="contact" class="wrap">
+  <h2 class="label">Contact</h2>
+  <ul class="contact">
+    <li><a href="#contact" data-mail="Japan Companion">Email</a></li>
+    <li><a href="https://www.linkedin.com/in/guy-aviv-project-manager/" rel="noopener">LinkedIn</a></li>
+    <li><a href="/Guy-Aviv-CV.pdf" download>Download CV</a></li>
+  </ul>
+</footer>
+</body>
+</html>

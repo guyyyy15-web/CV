@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HeChatzer case study | Guy Aviv</title>
+<meta name="description" content="HeChatzer: an encrypted group app I specced, built and run on my own. 15 releases in 8 days, idle traffic cut from about 600 to 40 requests an hour, and a release plan driven by real retention data.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://guyaviv.pages.dev/work/hechatzer">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://guyaviv.pages.dev/work/hechatzer">
+<meta property="og:title" content="HeChatzer case study | Guy Aviv">
+<meta property="og:description" content="An encrypted group app I specced, built and run on my own, with the numbers behind it.">
+<meta property="og:image" content="https://guyaviv.pages.dev/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/site.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "af52354739e8443c9c1f51a5ee0d1eed"}'></script>
+</head>
+<body>
+<a class="skip" href="#story">Skip to the case study</a>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="/">Guy Aviv</a>
+    <nav aria-label="Sections">
+      <a href="/#work">All work</a>
+      <a class="btn small primary" href="/Guy-Aviv-CV.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="story" class="wrap cs">
+  <p class="label">Case study <span class="tag own">Own product</span></p>
+  <h1>HeChatzer <bdi lang="he">החצר</bdi></h1>
+  <p class="lead">An end-to-end encrypted app for friends and families: who brings what to an event, and who does which chore at home. I wrote the PRD, designed it, built it with Claude Code and run it in production. Then I used real usage data to decide what to build next.</p>
+  <ul class="stats">
+    <li><b>15</b> releases in 8 days</li>
+    <li><b>~600 to ~40</b> requests an hour from an idle phone</li>
+    <li><b>₪0</b> a month to run</li>
+    <li><b>20</b> sign-ups in the first week</li>
+  </ul>
+  <p class="actions"><a class="btn primary" href="https://hechatzer.pages.dev/" rel="noopener">Try it live</a></p>
+
+  <figure class="media phone cs-media">
+    <video class="clip" muted loop playsinline preload="none" width="450" height="974" poster="/video/hechatzer-poster.webp"
+           aria-label="HeChatzer on a phone, in Hebrew: the welcome screen, my yards, an event list, taking an item with a duckling animation, the full list, shared chores, and my day." data-src="/video/hechatzer.mp4" data-name="HeChatzer"></video>
+    <figcaption>On a phone. Demo data from the automated browser tests.</figcaption>
+  </figure>
+
+  <section class="cs-part" aria-labelledby="h-problem">
+    <h2 id="h-problem">The problem</h2>
+    <p>Friends plan a barbecue in a WhatsApp group. Ten minutes later nobody can tell who said they would bring the drinks. Roommates split chores the same way, and it falls apart in a week. A shared list fixes this, but a group's plans and home life are private, so I wanted a server that cannot read them.</p>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-calls">
+    <h2 id="h-calls">Product calls I made</h2>
+    <ul>
+      <li><strong>Encrypted by design.</strong> Every change is encrypted and signed on the phone. The server stores locked data and relays it. Permissions are checked on each phone from the signature and the member's role, so the server never has to be trusted.</li>
+      <li><strong>No passwords and no email.</strong> Sign-in is a passkey (Face ID or fingerprint), with a save code as a fallback. There is no personal data to store or leak.</li>
+      <li><strong>Built for teens 13 and up.</strong> Hebrew copy is gendered, so every user picks how the app addresses them, and other members are addressed in their own form.</li>
+      <li><strong>Cost first.</strong> Cloudflare Pages, Workers, D1 and R2 on the free tier, with limits on photo size and storage so a viral week cannot turn into a bill.</li>
+    </ul>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-data">
+    <h2 id="h-data">What the data showed, and what I shipped</h2>
+    <p>I wrote a read-only usage script (people, groups, activity, free-tier meters) and checked it after launch. Daily active people went from 11 on launch day to 2 a few days later, and only 4 phones had notifications turned on. A group app that nobody returns to is a list nobody updates.</p>
+    <p>So the next two releases went to retention, not new features:</p>
+    <ul>
+      <li>An invite card in groups of fewer than 3 people, with a WhatsApp preview of the message.</li>
+      <li>A card that asks for notifications at the right moment, and comes back at most 3 times.</li>
+      <li>A daily streak, and a duckling mascot that misses you when you stay away.</li>
+      <li>Ready-made templates for a home (roommates, family, dorm, couple).</li>
+      <li>Swap a chore with someone, a vacation mode that skips you on rotation, and a weekly summary for the group admin.</li>
+    </ul>
+    <p>Next step: compare second-week activity before and after these releases.</p>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-eng">
+    <h2 id="h-eng">Keeping it fast and free</h2>
+    <ul>
+      <li><strong>Lighter sync.</strong> A check is now one request, the full group info is reloaded only when members or keys change, and polling backs off to 2 minutes while nothing happens. Measured on an idle phone: from about 600 to about 40 requests an hour.</li>
+      <li><strong>Cost guards.</strong> The server counts storage operations per month and pauses photo uploads at 80% of the free tier. A "done" still counts without its photo. Two switches can pause photos or make the whole app read-only in an emergency.</li>
+      <li><strong>Release loop.</strong> Unit, server and 3-phone browser tests run on every push. A version goes live only after CI is green, and a check on the real site runs right after each release.</li>
+    </ul>
+  </section>
+
+  <section class="cs-part" aria-labelledby="h-role">
+    <h2 id="h-role">My role</h2>
+    <p>Everything: PRD, brand, every screen and the code, built with Claude Code from my own specs. I also run it: releases, usage checks and costs.</p>
+  </section>
+
+  <p class="cs-next"><a href="/work/squad-journal">Next: Squad Journal ›</a></p>
+</main>
+
+<footer id="contact" class="wrap">
+  <h2 class="label">Contact</h2>
+  <ul class="contact">
+    <li><a href="#contact" data-mail="HeChatzer">Email</a></li>
+    <li><a href="https://www.linkedin.com/in/guy-aviv-project-manager/" rel="noopener">LinkedIn</a></li>
+    <li><a href="/Guy-Aviv-CV.pdf" download>Download CV</a></li>
+  </ul>
+</footer>
+</body>
+</html>
