@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>HeChatzer case study | Guy Aviv</title>
-<meta name="description" content="HeChatzer: an encrypted group app I specced, built and run on my own. 15 releases in 8 days, idle traffic cut from about 600 to 40 requests an hour, and a release plan driven by real retention data.">
+<meta name="description" content="HeChatzer: an encrypted group app I specced, built and run on my own. 15 releases in 8 days, idle traffic cut from about 600 to 40 requests an hour, and a release plan driven by usage data.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://guyaviv.pages.dev/work/hechatzer">
@@ -42,7 +42,6 @@
     <li><b>15</b> releases in 8 days</li>
     <li><b>~600 to ~40</b> requests an hour from an idle phone</li>
     <li><b>₪0</b> a month to run</li>
-    <li><b>20</b> sign-ups in the first week</li>
   </ul>
   <p class="actions"><a class="btn primary" href="https://hechatzer.pages.dev/" rel="noopener">Try it live</a></p>
 
@@ -69,7 +68,7 @@
 
   <section class="cs-part" aria-labelledby="h-data">
     <h2 id="h-data">What the data showed, and what I shipped</h2>
-    <p>I wrote a read-only usage script (people, groups, activity, free-tier meters) and checked it after launch. Daily active people went from 11 on launch day to 2 a few days later, and only 4 phones had notifications turned on. A group app that nobody returns to is a list nobody updates.</p>
+    <p>I wrote a read-only usage script (people, groups, activity, free-tier meters) and checked it after launch. It showed the classic early drop: people tried it on day one and fewer came back in the following days, and most phones had notifications off. A group app that nobody returns to is a list nobody updates.</p>
     <p>So the next two releases went to retention, not new features:</p>
     <ul>
       <li>An invite card in groups of fewer than 3 people, with a WhatsApp preview of the message.</li>
